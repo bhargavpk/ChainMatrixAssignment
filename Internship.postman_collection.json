@@ -1,0 +1,285 @@
+{
+	"info": {
+		"_postman_id": "f3869eae-4284-4adc-9f1c-c66e83bc64df",
+		"name": "Internship",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userId\": \"1\",\n\t\"productId\": \"1\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/cart/addProduct",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cart",
+								"addProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userId\": \"1\",\n\t\"productId\": \"1\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/cart/removeProduct",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cart",
+								"removeProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Decrease",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userId\": 1,\n\t\"productId\": 1\n}"
+						},
+						"url": {
+							"raw": "{{url}}/cart/decrementProduct",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cart",
+								"decrementProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "History",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userId\": 1\n}"
+						},
+						"url": {
+							"raw": "{{url}}/cart/history",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cart",
+								"history"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Add info",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userId\": \"2\",\n\t\"address\": \"England\",\n\t\"type\": \"wallet\",\n\t\"company\": \"GooglePay\",\n\t\"id\": \"1\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/user/addShoppingInfo",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"addShoppingInfo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "Check balance",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userId\": \"2\",\n\t\"paymentType\": \"wallet\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/payment/balance",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"payment",
+								"balance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change balance",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userId\": \"2\",\n\t\"amount\": \"3000\",\n\t\"type\": \"add\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/payment/balance",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"payment",
+								"balance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buy product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userId\": \"1\",\n\t\"productId\": \"2\",\n\t\"quantity\": \"1\",\n\t\"paymentType\": \"wallet\",\n\t\"companyName\": \"Google Pay\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/payment/product",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"payment",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buy cart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userId\": \"1\",\n\t\"paymentType\": \"wallet\",\n\t\"companyName\": \"Google Pay\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/payment/cart",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"payment",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
